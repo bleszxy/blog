@@ -36,4 +36,3 @@ https://github.com/zouzg/mybatis-generator-gui
 ![image-20200407101539478](./images/image-20200407101539478.png)
 
 6.点击代码生成，将生成的代码贴入自己的项目中。
-

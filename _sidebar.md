@@ -8,4 +8,5 @@
     
 * mybatis
    * [mybatis-generator-gui](mybatis/MYBATIS_GENERATOR_GUI.md)
+   * [常见问题](mybatis/COMMON_PROBLEM.md)
 
