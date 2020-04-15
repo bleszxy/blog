@@ -1,4 +1,4 @@
-学习笔记由docsify构建而成，编码使用Typora工具编写md，由docsify将md转换为html server。
+学习&工作笔记由docsify构建而成，编码使用Typora工具编写md，由docsify将md转换为html server。
 
 ```bash
 1.安装docsify-cli
