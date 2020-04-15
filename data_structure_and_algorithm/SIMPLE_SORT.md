@@ -8,7 +8,7 @@
 
 
 
-![image-20200406181921547](./images/image-20200406181921547.png)
+![image-20200406181921547](../all_images/image-20200406181921547.png)
 
 
 
@@ -158,7 +158,7 @@ arr elem len:10 loop out:3 in:0 a[in]:11 > a[in + 1]:0 swap!
 
 
 
-![image-20200406184110821](./images/image-20200406184110821.png)
+![image-20200406184110821](../all_images/image-20200406184110821.png)
 
 ```
 package simplesort;
@@ -398,7 +398,7 @@ arr elem len:10 loop:9 marked:33 insert to 3
 
 执行示例图：
 
-![image-20200408110750051](./images/image-20200408110750051.png)
+![image-20200408110750051](../all_images/image-20200408110750051.png)
 
 
 

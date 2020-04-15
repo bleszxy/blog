@@ -40,7 +40,7 @@ sudo systemctl restart docker
 
    如下图：
 
-   ![image-20200415182003759](/Users/yanghao/docs/docker/images/image-20200415182003759.png)
+   ![image-20200415182003759](../all_images/image-20200415182003759.png)
 
 2. 重启docker服务
 
