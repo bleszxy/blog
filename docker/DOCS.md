@@ -1,4 +1,6 @@
-**docker cp**
+[TOC]
+
+#### docker cp
 
 ```
 docker cp 目录/ tm-service:目录
@@ -12,7 +14,7 @@ docker cp 目录 tm-service:目录
 
 
 
-**添加代理**
+#### 代理
 
 ```
 1. 修改配置文件
@@ -32,7 +34,7 @@ sudo systemctl restart docker
 
 
 
-**ubuntu开启docker tcp端口**
+#### ubuntu开启docker tcp端口
 
 1. 修改docker文件
 

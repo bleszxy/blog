@@ -1,3 +1,5 @@
+[TOC]
+
 ### dependency:go-offline
 
 http://maven.apache.org/plugins/maven-dependency-plugin/go-offline-mojo.html#excludeArtifactIds

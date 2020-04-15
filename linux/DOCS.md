@@ -1,4 +1,8 @@
-#### 1. 各种基础命令含义
+[TOC]
+
+
+
+#### 各种基础命令含义
 
 ```
 $0, $#, $*, $@, $?, $$的含义
@@ -14,7 +18,7 @@ $? 显示最后命令的退出状态，0表示没有错误，其他表示有错�
 
 
 
-#### 2. 参数接收
+#### 参数接收
 
 **方式1 xxx.sh 参数1 参数2**
 
@@ -95,7 +99,7 @@ echo "maven build success."
 
 
 
-#### 3. 最后执行命令的退出状态判断
+#### 最后执行命令的退出状态判断
 
 ```shell
 #!/bin/bash
@@ -110,7 +114,7 @@ echo "init console-mvn-builder done."
 
 
 
-#### 4. exit 0 exit1的区别
+#### exit 0 exit1的区别
 
 ​	exit 0正常运行程序并退出程序
 
@@ -118,7 +122,7 @@ echo "init console-mvn-builder done."
 
 
 
-#### 5. 获取当前文件夹目录、文件夹名、上级目录
+#### 获取当前文件夹目录、文件夹名、上级目录
 
 ```
 当前文件夹目录：$PWD
@@ -130,7 +134,7 @@ echo "init console-mvn-builder done."
 
   
 
-#### 6.如何添加--help提示
+#### 如何添加--help提示
 
 ```
 example="格式: ./indocker.sh [shell] (default ./build.sh)";
