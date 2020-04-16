@@ -11,10 +11,10 @@
    * [常见问题](mybatis/COMMON_PROBLEM.md)
 
 * Linux
-   * [使用手册](linux/DOCS.md)
+   * [工作手册](linux/DOCS.md)
 
 * Docker
-   * [使用手册](docker/DOCS.md)
+   * [工作手册](docker/DOCS.md)
 
 * Maven
-   * [使用手册](maven/DOCS.md)
+   * [工作手册](maven/DOCS.md)
