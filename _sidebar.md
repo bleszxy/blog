@@ -20,6 +20,9 @@
 * Docker
    * [工作手册](docker/DOCS.md)
 
+* Kubernetes
+   * [日志架构](kubernetes/LOG_TRACK.md)
+
 * Maven
    * [工作手册](maven/DOCS.md)
 
