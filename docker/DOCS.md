@@ -28,7 +28,7 @@ sudo systemctl restart docker
 
    如下图：
 
-   ![image-20200415182003759](/Users/yanghao/docs/all_images/image-20200415182003759.png)
+   ![image-20200415182003759](../all_images/image-20200415182003759.png)
 
 2. 重启docker服务
 
@@ -151,11 +151,11 @@ docker exec -it track-service /bin/bash
 
 
 
-**自定义docker image**
+**自定义ubuntu docker image**
 
 项目路径
 
-![image-20200416183732314](/Users/yanghao/docs/all_images/image-20200416183732314.png)
+![image-20200416183732314](../all_images/image-20200416183732314.png)
 
 dockerFile
 
@@ -168,6 +168,7 @@ ENV TZ "Asia/Shanghai"
 
 
 #openjdk8 jre
+#https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08_openj9-0.18.1/OpenJDK8U-jre_x64_linux_openj9_8u242b08_openj9-0.18.1.tar.gz
 ADD openjdk.tar.gz /opt/java/openjdk
 
 ENV JAVA_VERSION jdk8u242-b08_openj9-0.18.1
@@ -192,12 +193,15 @@ CMD ["/bin/bash"]
 
 构建脚本
 
-```
+```shell
 cd open-jdk8-image-ubuntu-18.04
 #当前目录下的dockerfile为基准，构建整个文件夹
 docker build -t openjdk8-ubuntu18:20200413 .
 docker tag openjdk8-ubuntu18:20200413 registry.tsingj.local/openjdk8-ubuntu18:20200413
 docker push registry.tsingj.local/openjdk8-ubuntu18:20200413
+
+#指定其他目录dockerfile的方式
+docker build -f /path/to/a/Dockerfile -t openjdk8-ubuntu18:20200413 .
 ```
 
 
