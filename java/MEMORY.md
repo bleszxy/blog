@@ -10,9 +10,9 @@
 
 3. 减少启动初期的GC次数
 
-4. 尽可能避免使用swap space
+   4. 尽可能避免使用swap space
 
-![image-20200416112837237](/Users/yanghao/docs/all_images/image-20200416112837237.png)
+![image-20200416112837237](../all_images/image-20200416112837237.png)
 
 
 
@@ -23,3 +23,4 @@ https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html
 gc介绍
 
 https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gc-ergonomics.html
+
