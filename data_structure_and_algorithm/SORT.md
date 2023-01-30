@@ -1,5 +1,7 @@
 [TOC]
 
+# 简单排序
+
 ## 冒泡排序
 
 运行速度比较慢，但是在概念上是排序算法中最简单的。
@@ -412,6 +414,323 @@ arr elem len:10 loop:9 marked:33 insert to 3
 
 第一趟排序中，最多比较一次，第二趟最多比较两次，依此类推，最后一项最多比较N-1次。因此得出1+2+3+…+N-1 = N(N-1)/2,然而每一趟排序发现插入点之前，平均只有全体数据项的一半真的进行了比较，可以得出N(N-1)/4.
 
-总结
+简单排序总结
 
 对于已有序或基本有序的数据来说，插入排序要好很多。当数据有序时，while循环的条件总为假，所以它变成了外层循环的一个简单语句，执行N-1次。如果数据基本有序插入排序几乎只需要O(N)的时间。然而对于逆序排序的数据，每次的比较和移动都会执行，所以插入排序不会比冒泡排序快！
+
+
+
+# 递归排序
+
+## **归并排序**
+
+归并排序比SIMPLE_SORT.md要更有效的多，至少在速度上是这样的。冒泡排序、插入排序、选择排序要用O(N2)时间，而归并排序只需要O(N*logN)。如果被排序的数目是10000，那么N2就是100000000，而(N*logN)仅需为40000。如果归并排序需要40S，那么插入排序则需要20小时。
+
+缺点
+
+归并排序单独需要1倍于被排序数据项数组的空间占用。如果初始数组几乎占满了整个存储器，归并排序将不能工作。
+
+流程图
+
+![image-20200525201154575](../all_images/image-20200525201154575.png)
+
+
+
+代码
+
+```
+
+package recursive.merge_sort;
+
+// mergeSort.java
+// demonstrates recursive merge sort
+// to run this program: C>java MergeSortApp
+////////////////////////////////////////////////////////////////
+class DArray {
+    private long[] theArray;          // ref to array theArray
+    private int nElems;               // number of data items
+
+    //-----------------------------------------------------------
+    public DArray(int max)            // constructor
+    {
+        theArray = new long[max];      // create array
+        nElems = 0;
+    }
+
+    //-----------------------------------------------------------
+    public void insert(long value)    // put element into array
+    {
+        theArray[nElems] = value;      // insert it
+        nElems++;                      // increment size
+    }
+
+    //-----------------------------------------------------------
+    public void display()             // displays array contents
+    {
+        for (int j = 0; j < nElems; j++)    // for each element,
+        {
+            System.out.print(theArray[j] + " ");  // display it
+        }
+        System.out.println("");
+    }
+
+    public void display(long[] arr)             // displays array contents
+    {
+        for (int j = 0; j < arr.length; j++)    // for each element,
+        {
+            System.out.print(arr[j] + " ");  // display it
+        }
+        System.out.println("");
+    }
+
+    //-----------------------------------------------------------
+    public void mergeSort()           // called by main()
+    {                              // provides workspace
+        long[] workSpace = new long[nElems];
+        recMergeSort(workSpace, 0, nElems - 1);
+    }
+
+    //-----------------------------------------------------------
+    private void recMergeSort(long[] workSpace, int lowerBound,
+                              int upperBound) {
+        if (lowerBound == upperBound)            // if range is 1,
+        {
+            return;                              // no use sorting
+        } else {                                    // find midpoint
+            int mid = (lowerBound + upperBound) / 2;
+//            System.out.println("mid:"+mid);
+            // sort low half
+            recMergeSort(workSpace, lowerBound, mid);
+//            System.out.println("low half");
+            // sort high half
+            recMergeSort(workSpace, mid + 1, upperBound);
+//            System.out.println("high half");
+            // merge them
+            merge(workSpace, lowerBound, mid + 1, upperBound);
+            display();
+            System.out.println("--------------------");
+        }  // end else
+    }  // end recMergeSort()
+
+    //-----------------------------------------------------------
+    private void merge(long[] workSpace, int lowPtr,
+                       int highPtr, int upperBound) {
+        int j = 0;                             // workspace index
+        int lowerBound = lowPtr;
+        int mid = highPtr - 1;
+        int n = upperBound - lowerBound + 1;       // # of items
+
+        while (lowPtr <= mid && highPtr <= upperBound) {
+            if (theArray[lowPtr] < theArray[highPtr]) {
+                workSpace[j++] = theArray[lowPtr++];
+            } else {
+                workSpace[j++] = theArray[highPtr++];
+            }
+        }
+
+        //将左边剩余元素填充进temp中
+        while (lowPtr <= mid) {
+            workSpace[j++] = theArray[lowPtr++];
+        }
+
+        //将右序列剩余元素填充进temp中
+        while (highPtr <= upperBound) {
+            workSpace[j++] = theArray[highPtr++];
+        }
+
+        //将temp中的元素全部拷贝到原数组中
+        for (j = 0; j < n; j++) {
+            theArray[lowerBound + j] = workSpace[j];
+        }
+    }  // end merge()
+    //-----------------------------------------------------------
+}  // end class DArray
+
+////////////////////////////////////////////////////////////////
+class MergeSortApp {
+    public static void main(String[] args) {
+        int maxSize = 100;             // array size
+        DArray arr;                    // reference to array
+        arr = new DArray(maxSize);     // create the array
+
+        arr.insert(64);                // insert items
+        arr.insert(21);
+        arr.insert(33);
+        arr.insert(70);
+        arr.insert(12);
+        arr.insert(85);
+        arr.insert(44);
+        arr.insert(3);
+        arr.insert(99);
+        arr.insert(0);
+        arr.insert(108);
+        arr.insert(36);
+
+        arr.display();                 // display items
+
+        arr.mergeSort();               // merge sort the array
+
+        arr.display();                 // display items again
+    }  // end main()
+}  // end class MergeSortApp
+////////////////////////////////////////////////////////////////
+
+
+
+执行结果如下：
+64 21 33 70 12 85 44 3 99 0 108 36 
+
+21 64 33 70 12 85 44 3 99 0 108 36 
+--------------------
+21 33 64 70 12 85 44 3 99 0 108 36 
+--------------------
+21 33 64 12 70 85 44 3 99 0 108 36 
+--------------------
+21 33 64 12 70 85 44 3 99 0 108 36 
+--------------------
+12 21 33 64 70 85 44 3 99 0 108 36 
+--------------------
+12 21 33 64 70 85 3 44 99 0 108 36 
+--------------------
+12 21 33 64 70 85 3 44 99 0 108 36 
+--------------------
+12 21 33 64 70 85 3 44 99 0 108 36 
+--------------------
+12 21 33 64 70 85 3 44 99 0 36 108 
+--------------------
+12 21 33 64 70 85 0 3 36 44 99 108 
+--------------------
+0 3 12 21 33 36 44 64 70 85 99 108 
+--------------------
+0 3 12 21 33 36 44 64 70 85 99 108 
+
+
+```
+
+通过结果可以看出，先是左半部分 多个递归段分别有序，然后右半部分 多个递归段分别有序，总终合并左右并排序。
+
+# 高级排序
+
+## 希尔排序
+
+​       专家提倡：差不多任何排序工作最开始时，都可以使用希尔排序，因为实现简单，性能尚可。 如在实际中证明其不够好，再改为更高级的排序方式，比如快速排序。
+
+
+
+​        希尔排序是基于插入排序的，插入排序的性能问题在于每个数据项复制的次数过多，希尔排序通过加入插入排序中元素之间的间隔再进行排序，依此进行下去。 排序时数据项之间的间隔被称为增量，习惯用字母h表示，希尔排序也被称为递减增量排序。
+
+​        示例：增量为4时，10个数据项的数组进行排序情况。
+
+​                                                                               **第一个步骤**
+
+
+
+![image-20230130124553204](/Users/yanghao/docs/all_images/image-20230130124553204.png)
+
+​                                                                           
+
+​                                                                           **一次间隔的排序方式**
+
+
+
+![image-20230130124948706](/Users/yanghao/docs/all_images/image-20230130124948706.png)
+
+希尔排序的奥义就是通过**创建交错的内部有序的数据项集合**，把完成排序所需要的工作量降到最小。
+
+
+
+**间隔序列**
+
+根据数据项的大小，定义开始时间隔的大小，然后间隔不断减小直至变成1，一般参用如下Knuth间隔序列。
+
+![image-20230130125748790](/Users/yanghao/docs/all_images/image-20230130125748790.png)
+
+
+
+
+
+## 快速排序
+
+快速排序是最流行的排序算法，大多数情况下，快速排序都是最快的，执行时间为O(N*logN)级。
+
+注意：仅针对内部排序，对于磁盘文件排序，其他的排序算法可能更好。
+
+
+
+**划分 partition**
+
+划分是快速排序的根本机制，划分数据就是按照关键字把数据分为两组，大于的一组，小于的一组。
+
+
+
+**原理**
+
+快速排序的本质是：通过把一个数组划分为两个字数组，然后递归的调用自身为每一个子数组进行快速排序来实现的。下面是一个快速排序的代码片段，我们来理解一下快速排序的3个主要步骤：
+
+```java
+ //--------------------------------------------------------------
+    public void quickSort() {
+        recQuickSort(0, nElems - 1);
+    }
+
+    //--------------------------------------------------------------
+    public void recQuickSort(int left, int right) {
+        if (right - left <= 0)              // if size <= 1,
+        {
+            return;                      //    already sorted
+        } else                             // size is 2 or larger
+        {
+            //定义数组最右侧的数据项为选择枢纽
+            long pivot = theArray[right];      // rightmost item
+            //按照选择枢纽进行数据划分为左边一组、右边一组
+            int partition = partitionIt(left, right, pivot); // partition range
+            //调用自身对左边一组，或者左边一组进行排序
+            recQuickSort(left, partition - 1);   // sort left side
+            //调用自身对右边一组，或者右边一组进行排序
+            recQuickSort(partition + 1, right);  // sort right side
+        }
+    }  // end recQuickSort()
+```
+
+经过一次排序（recQuickSort方法）划分后，左边子数组的数据项都小于右边子数组的数据项。只要对左边和右边的子数组分别进行排序，整个数组就是有序的了。如何对子数组进行排序？ 递归调用自身，进行划分即可。
+
+
+
+**枢纽选择**
+
+上面的代码片段，为了理解方便，每次选择最右侧的数据项为枢纽。**枢纽的选择会影响性能，应该尽可能的通过枢纽可以将数组平均的分为两个子数组**。
+
+
+
+**三数据取中**（median-of-three），选择第一个，最后一个，和中间的数据项中值，作为枢纽。
+
+
+
+![image-20230130183813975](/Users/yanghao/docs/all_images/image-20230130183813975.png)
+
+该方式有效的避免了数据已经有序或者逆序的情况下，选择最大的或者最小的数据作为枢纽的机会，详见下方示例：
+
+```java
+//--------------------------------------------------------------
+    public void recQuickSort(int left, int right) {
+        int size = right - left + 1;
+        if (size <= 3)                  // manual sort if small
+        {
+            manualSort(left, right);
+        } else                           // quicksort if large
+        {
+            //三数据取中方式获取选择枢纽
+            long median = medianOf3(left, right);
+            //进行数组划分
+            int partition = partitionIt(left, right, median);
+            recQuickSort(left, partition - 1);
+            recQuickSort(partition + 1, right);
+        }
+    }  // end recQuickSort()
+```
+
+
+
+
+
+
