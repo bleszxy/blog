@@ -1,6 +1,20 @@
 [TOC]
 
-#### 代理
+#### 容器化（Containerization）
+
+容器化是一种虚拟化技术，又称操作系统层虚拟化（Operating system level virtualization），这种技术将操作系统内核虚拟化，可以允许用户空间软件实例（instances）被分割成几个独立的单元，在内核中运行，而不是只有一个单一实例运行。这个软件实例，也被称为是一个容器（containers）。对每个实例的拥有者与用户来说，他们使用的服务器程序，看起来就像是自己专用的。
+
+相对于传统的基于虚拟机的虚拟化技术，容器化的优势在于占用服务器资源空间少，启动非常快，通常几秒内即可引导，缺点就是隔离性和安全性没有VM技术高。
+
+
+
+#### docker
+
+开源的应用容器引擎。
+
+
+
+#### docker代理配置
 
 ```
 1. 修改配置文件
@@ -161,7 +175,7 @@ dockerFile
 
 ```
 FROM ubuntu:18.04
-MAINTAINER  yaoshuai <ys@tsingj.com>
+MAINTAINER  yanghao <yanghao@tsingj.com>
 
 ENV LANG C.UTF-8
 ENV TZ "Asia/Shanghai"
@@ -176,9 +190,6 @@ ENV JAVA_HOME=/opt/java/openjdk/jdk8u242-b08-jre \
     PATH="/opt/java/openjdk/jdk8u242-b08-jre/bin:$PATH"
 ENV JAVA_TOOL_OPTIONS="-XX:+IgnoreUnre"
 ENV JAVA_TOOL_OPTIONS="-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle"
-
-ADD http://dl.tsingj.local/tini /tini
-RUN chmod +x /tini
 
 RUN apt-get update && \
         apt install -y bzip2 libgomp1 tar tzdata wget unzip curl jq && \
