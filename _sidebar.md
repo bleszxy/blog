@@ -23,7 +23,7 @@
 * JavaWeb
    * [Tomcat线程模型](javaweb/SERVER_IO_MODEL.md)
    * [Mybatis常见问题](javaweb/MYBATIS_COMMON_PROBLEM.md)
-   * [LQUIBASE](javaweb/LIQUIBASE_QUICK_START.md)
+   * [LIQUIBASE](javaweb/LIQUIBASE_QUICK_START.md)
 * Database
    * [OLTP和OLAP](database/OLTP_OLAP.md) 
    * [MYSQL常用命令](database/MYSQL_COMMON_CMD.md) 
