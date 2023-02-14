@@ -54,11 +54,15 @@ The following specifies the minimum requirements to run this Maven plugin:
 
 执行mvn org.liquibase:liquibase-maven-plugin:3.8.5:diff,将会在配置路径生成如下changelog.xml
 
-![image-20200426154336753](../all_images/image-20200426154336753.png)
+<img src="../all_images/image-20200426154336753.png" width=70% height=70% />
+
+
 
 **2.将生成的差异性changelog.xml放入changeling-master.xml**
 
-![image-20200426154540721](../all_images/image-20200426154540721.png)
+<img src="../all_images/image-20200426154540721.png" width=70% height=70% />
+
+
 
 **3.编译并构建服务，服务执行时会执行update命令，check变更并sync变更。**
 
@@ -66,20 +70,21 @@ The following specifies the minimum requirements to run this Maven plugin:
 
 update执行前，查看DATABASECHANGELOG已执行的changelog.xml
 
-![image-20200426152615064](../all_images/image-20200426152615064.png)
+<img src="../all_images/image-20200426152615064.png" width=70% height=70% />
+
+
 
 update执行后，变更后查看DATABASECHANGELOG、task_data_source表,发现本次diff出来的变更已加入DATABASECHANGELOG，task_data_source表的变更也执行了。
 
 DATABASECHANGELOG chanlog执行轨迹
 
-![image-20200426152735764](../all_images/image-20200426152735764.png)
+<img src="../all_images/image-20200426152735764.png" width=70% height=70% />
 
 
 
 task_data_source表变更
 
-![image-20200426155138453](../all_images/image-20200426155138453.png)
+<img src="../all_images/image-20200426155138453.png" width=70% height=70% />
 
 
 
-代码提交后，修改
