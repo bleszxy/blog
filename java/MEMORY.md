@@ -10,9 +10,9 @@
 
 3. 减少启动初期的GC次数
 
-   4. 尽可能避免使用swap space
+4. 尽可能避免使用swap space
 
-![image-20200416112837237](all_images/image-20200416112837237.png)
+   <img src="all_images/image-20200416112837237.png" width=90% height=90% />
 
 
 

@@ -8,7 +8,9 @@ Kubernetes 还提供完善的管理工具，涵盖开发、部署测试、运维
 
 #### 架构
 
-![image-20200423103456582](all_images/image-20200423103456582.png)
+<img src="all_images/image-20200423103456582.png" width=70% height=70% />
+
+
 
 
 
@@ -34,11 +36,13 @@ Fluentd-elasticsearch提供集群日志采集、存储与查询
 
 
 
-![image-20200423103540705](all_images/image-20200423103540705.png)
+<img src="all_images/image-20200423103540705.png" width=70% height=70% />
 
 
 
-![image-20200423103601665](all_images/image-20200423103601665.png)
+<img src="all_images/image-20200423103601665.png" width=70% height=70% />
+
+
 
 
 
@@ -46,7 +50,9 @@ Fluentd-elasticsearch提供集群日志采集、存储与查询
 
 Kubernetes设计理念和功能其实就是一个类似Linux的分层架构，如下图所示
 
-![image-20200423150050323](all_images/image-20200423150050323.png)
+<img src="all_images/image-20200423150050323.png" width=70% height=70% />
+
+
 
 - 核心层：Kubernetes最核心的功能，对外提供API构建高层的应用，对内提供插件式应用执行环境
 - 应用层：部署（无状态应用、有状态应用、批处理任务、集群应用等）和路由（服务发现、DNS解析等）

@@ -10,7 +10,7 @@
 
 **元素是否允许重复比较**
 
-<img src="all_images/image-20200405160830327.png" style="zoom:50%" />
+<img src="all_images/image-20200405160830327.png" width=70% height=70% />
 
 #### **线性查找**
 
@@ -20,7 +20,7 @@
 
 当使用二分查找时就体现出有序数组的好处，这种查找方式比线性查找快很多，尤其对大数组尤为显著。每查找一次就会将可能的值划分为两部分，最后范围会缩小到一个数字那么大，这就是答案。
 
-<img src="all_images/image-20200405160935786.png" style="zoom:50%" />
+<img src="all_images/image-20200405160935786.png" width=70% height=70% />
 
 
 
@@ -34,13 +34,13 @@
 
 1. 运行时间表示
 
-   <img src="all_images/image-20200405161204118.png" style="zoom:50%" />
+   <img src="all_images/image-20200405161204118.png" width=70% height=70% />
 
 
 
 2. 运行时间轴
 
-   <img src="all_images/image-20200405161252463.png" style="zoom:50%" />
+   <img src="all_images/image-20200405161252463.png" width=70% height=70% />
 
 
 

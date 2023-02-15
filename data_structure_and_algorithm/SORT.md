@@ -12,7 +12,9 @@
 
 
 
-![image-20200406181921547](all_images/image-20200406181921547.png)
+<img src="all_images/image-20200406181921547.png" width=70% height=70% />
+
+
 
 
 
@@ -160,9 +162,9 @@ arr elem len:10 loop out:3 in:0 a[in]:11 > a[in + 1]:0 swap!
 
 ​       再次扫描球队队员时，就从1号位置开始，还是寻找最矮的，然后和1号位置的队员交换。这个过程一直持续到所有队员都排定。
 
+<img src="all_images/image-20200406184110821.png" width=70% height=70% />
 
 
-![image-20200406184110821](all_images/image-20200406184110821.png)
 
 ```
 package simplesort;
@@ -402,7 +404,9 @@ arr elem len:10 loop:9 marked:33 insert to 3
 
 执行示例图：
 
-![image-20200408110750051](all_images/image-20200408110750051.png)
+<img src="all_images/image-20200408110750051.png" width=70% height=70% />
+
+
 
 
 
@@ -432,7 +436,9 @@ arr elem len:10 loop:9 marked:33 insert to 3
 
 流程图
 
-![image-20200525201154575](all_images/image-20200525201154575.png)
+<img src="all_images/image-20200525201154575.png" width=70% height=70% />
+
+
 
 
 
@@ -625,15 +631,17 @@ class MergeSortApp {
 
 
 
-![image-20230130124553204](/Users/yanghao/doall_images/image-20230130124553204.png)
+<img src="all_images/image-20230130124553204.png" width=70% height=70% />
+
+
 
 ​                                                                           
 
 ​                                                                           **一次间隔的排序方式**
 
+<img src="all_images/image-20230130124948706.png" width=70% height=70% />
 
 
-![image-20230130124948706](/Users/yanghao/doall_images/image-20230130124948706.png)
 
 希尔排序的奥义就是通过**创建交错的内部有序的数据项集合**，把完成排序所需要的工作量降到最小。
 
@@ -643,7 +651,9 @@ class MergeSortApp {
 
 根据数据项的大小，定义开始时间隔的大小，然后间隔不断减小直至变成1，一般参用如下Knuth间隔序列。
 
-![image-20230130125748790](/Users/yanghao/doall_images/image-20230130125748790.png)
+<img src="all_images/image-20230130125748790.png" width=70% height=70% />
+
+
 
 
 
@@ -704,9 +714,9 @@ class MergeSortApp {
 
 **三数据取中**（median-of-three），选择第一个，最后一个，和中间的数据项中值，作为枢纽。
 
+<img src="all_images/image-20230130183813975.png" width=70% height=70% />
 
 
-![image-20230130183813975](/Users/yanghao/doall_images/image-20230130183813975.png)
 
 该方式有效的避免了数据已经有序或者逆序的情况下，选择最大的或者最小的数据作为枢纽的机会，详见下方示例：
 

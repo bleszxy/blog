@@ -42,7 +42,9 @@ sudo systemctl restart docker
 
    如下图：
 
-   ![image-20200415182003759](all_images/image-20200415182003759.png)
+   <img src="all_images/image-20200415182003759.png" width=70% height=70% />
+
+   
 
 2. 重启docker服务
 
@@ -169,7 +171,9 @@ docker exec -it track-service /bin/bash
 
 项目路径
 
-![image-20200416183732314](all_images/image-20200416183732314.png)
+<img src="all_images/image-20200416183732314.png" width=70% height=70% />
+
+
 
 dockerFile
 

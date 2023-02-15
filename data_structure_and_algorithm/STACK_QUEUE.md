@@ -89,7 +89,9 @@ class StackApp {
 
 
 
-![image-20200418212926162](all_images/image-20200418212926162.png)
+<img src="all_images/image-20200418212926162.png" width=70% height=70% />
+
+
 
 
 
@@ -207,7 +209,9 @@ Reversed: oahgnay
 
 栈通常用于解析某种类型的文本串。通常，文本串是用计算机语言写的代码行，而解析他们的程序就是编译器。
 
-![image-20200418222928978](all_images/image-20200418222928978.png)
+<img src="all_images/image-20200418222928978.png" width=70% height=70% />
+
+
 
 
 
@@ -347,7 +351,9 @@ Error: missing right delimiter
 
 计算机科学中，队列是一种数据结构，有点类似栈，只是队列中第一个插入的项将最先被移出（先进先出，FIFO），而栈是最后插入的数据项最先被移出（LIFO）。队列的作用就像电影院排队买票一样，第一个进入队尾的人将最先进入队头买票。队列也被用作程序员的工具。
 
-![image-20200421164559530](all_images/image-20200421164559530.png)
+<img src="all_images/image-20200421164559530.png" width=70% height=70% />
+
+
 
 
 

@@ -2,9 +2,11 @@
 
 ### 优缺点
 
-![image-20200404195920774](all_images/image-20200404195920774.png)
+<img src="all_images/image-20200404195920774.png" width=70% height=70% />
 
-![image-20200404195955696](all_images/image-20200404195955696.png)
+<img src="all_images/image-20200404195955696.png" width=70% height=70% />
+
+
 
 ### 描述
 

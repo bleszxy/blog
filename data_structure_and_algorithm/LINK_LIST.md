@@ -12,7 +12,9 @@
 
 ### 链接点
 
-![image-20200509195436305](all_images/image-20200509195436305.png)
+<img src="all_images/image-20200509195436305.png" width=70% height=70% />
+
+
 
 
 
@@ -31,7 +33,9 @@ Link someLink = new Link();
 
 someLink字段也没有真正意义上拥有一个对象；它仍然是个引用。这个对象在内存的某个地方，如下图：
 
-![image-20200509200531530](all_images/image-20200509200531530.png)
+<img src="all_images/image-20200509200531530.png" width=50% height=70% />
+
+
 
 
 
@@ -186,7 +190,9 @@ List (first-->last): {88, 8.99} {44, 4.99} {22, 2.99}
 
 双端链表对比单链表多了对最后一个链接点的引用，如下图:
 
-![image-20200509201644685](all_images/image-20200509201644685.png)
+<img src="all_images/image-20200509201644685.png" width=70% height=70% />
+
+
 
 单链表想在链表尾部插入一个链接点，需要遍历整个单链表而双端链表切好可以解决该问题，双端链表也可以解决像访问表头一样访问表尾数据的问题。
 
@@ -455,7 +461,9 @@ List (first-->last): 20 30 40 50
 
 以上链表方式都只能从前往后遍历数据，无法做到从后往前遍历数据。
 
-![image-20200509205015689](all_images/image-20200509205015689.png)
+<img src="all_images/image-20200509205015689.png" width=70% height=70% />
+
+
 
 
 
@@ -693,5 +701,7 @@ List (first-->last): 44 22 77 33 88
 
 
 
-![image-20200509210131658](all_images/image-20200509210131658.png)
+<img src="all_images/image-20200509210131658.png" width=90% height=90% />
+
+
 

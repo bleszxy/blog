@@ -48,11 +48,11 @@ PS：小版本升级，比如5.7.1 -> 5.7.2，通常是兼容的。
 
 **复制解决的问题**
 
-<img src="all_images/image-20230214154428235.png" style="zoom:50%" />
+<img src="all_images/image-20230214154428235.png" width=70% height=70% />
 
 **复制如何工作？**
 
-<img src="all_images/image-20230214153025379.png" style="zoom:50%" />
+<img src="all_images/image-20230214153025379.png" width=70% height=70% />
 
 
 
