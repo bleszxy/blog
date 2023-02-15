@@ -4,7 +4,9 @@ tomcat服务器I/O模型
 
 单线程阻塞I/O模型是最简单的一种服务器模型，只能同时处理一个客户端访问，并且在读写I/O操作上都是阻塞的，线程会一直在等待，多个客户端同时访问时就像队列一样串行处理连接，详见下图
 
-<img src="../all_images/image-20200617152155597.png" width=70% height=70% />
+
+
+![image-20230214180843683](all_images/image-20230214180843683.png)
 
 
 
@@ -12,7 +14,7 @@ tomcat服务器I/O模型
 
 针对单线程阻塞I/O的缺点，采用多线程的方式对其进行改进，核心原理为每个客户端分配一个线程，处理能力得到大幅提高，有较高的并发量但是服务器资源消耗较大，并且会有多线程切换成本，程序结构也更复杂。
 
-<img src="../all_images/image-20200617153234179.png" width=70% height=70% />
+<img src="all_images/image-20200617153234179.png" width=70% height=70% />
 
 
 
@@ -34,7 +36,7 @@ socket检测方式
 
 多个客户端向服务器请求时，服务器端会保存一个socket连接列表，应用层线程会对socket连接列表轮询，不断的尝试读取或写入数据，这样很好的利用了阻塞的时间，但是连接空闲时也会占用较多的cpu资源，并不太适合实际使用，改进方式为如下两种事件驱动的非阻塞方式。
 
-<img src="../all_images/image-20200617193140706.png" width=70% height=70% />
+<img src="all_images/image-20200617193140706.png" width=70% height=70% />
 
 
 
@@ -42,7 +44,7 @@ socket检测方式
 
 将socket的遍历操作下沉到操作系统内核，把对socket的遍历结果组成一系列的事件列表并返回给应用层处理。如图所示，应用层向内核请求读写事件列表，内核遍历socket列表后生成可读列表readList和可写列表writeList，readList或writeList标明了每个socket是否可读或可写,值为1代表为可读或可写，应用层遍历读写事件列表做对应的读写操作。
 
-<img src="../all_images/image-20200617194458559.png" width=70% height=70% />
+<img src="all_images/image-20200617194458559.png" width=70% height=70% />
 
 
 
@@ -54,7 +56,7 @@ socket检测方式
 
 遍历的方式检测socket是否可读可写是一种效率比较低的方式，不管是应用层还中遍历还是内核中遍历，可以通过回调函数的机制来优化遍历的方式。内核中的socket都对应一个回调函数，无论是客户端往socket发数据还是内核从网卡中接收数据后就调用回调函数，回调函数中维护事件列表，应用层获取此事件列表获取自己感兴趣的事情。详见下图
 
-<img src="../all_images/image-20200617202926355.png" width=70% height=70% />
+<img src="all_images/image-20200617202926355.png" width=70% height=70% />
 
 
 
@@ -74,7 +76,7 @@ socket检测方式
 
 单线程非阻塞I/O模型已经大大提高了机器效率，而在多核机器上可以使用多线程继续提高机器效率，将客户端连接按组分配给若干线程，每个线程负责处理对应组内的连接。
 
-<img src="../all_images/image-20200619161944412.png" width=70% height=70% />
+<img src="all_images/image-20200619161944412.png" width=70% height=70% />
 
 
 
@@ -84,7 +86,7 @@ socket检测方式
 
 Reactor将服务器端的整个处理过程分为若干事件，例如accept、read、write、process事件，通过事件检测机制将这些事件分发给不同的处理器去处理，整个过程中只要有待处理的事件存在即可让Reactor线程不断往下执行而不会阻塞，所以处理效率很高。
 
-<img src="../all_images/image-20200619164533131.png" width=70% height=70% />
+<img src="all_images/image-20200619164533131.png" width=70% height=70% />
 
 
 
@@ -92,13 +94,13 @@ Reactor将服务器端的整个处理过程分为若干事件，例如accept、r
 
 1、对于耗时较高的process处理器引入线程池，避免在单个Reactor线程中存在耗时的操作。
 
-<img src="../all_images/image-20200619165354160.png" width=70% height=70% />
+<img src="all_images/image-20200619165354160.png" width=70% height=70% />
 
 
 
 2、直接使用多个Reactor实例，每个Reactor实例对应一个线程，由一个accept处理器接手客户端连接均匀非配给所有的Reactor实例。
 
-<img src="../all_images/image-20200619165413329.png" width=70% height=70% />
+<img src="all_images/image-20200619165413329.png" width=70% height=70% />
 
 
 
@@ -107,5 +109,3 @@ Reactor将服务器端的整个处理过程分为若干事件，例如accept、r
 
 
 
-
-![image-20230214172132337](../all_images/image-20230214172132337.png)

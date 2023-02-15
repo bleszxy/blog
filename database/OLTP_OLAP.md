@@ -16,5 +16,5 @@ OLAP 系统则强调数据分析，强调SQL执行市场，强调磁盘I/O，强
 
 OLTP与OLAP之间的比较：
 
-<img src="../all_images/image-20230214151048660.png" style="zoom:50%" />
+<img src="all_images/image-20230214151048660.png" style="zoom:50%" />
 

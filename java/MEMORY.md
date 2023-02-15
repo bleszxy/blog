@@ -12,7 +12,7 @@
 
    4. 尽可能避免使用swap space
 
-![image-20200416112837237](../all_images/image-20200416112837237.png)
+![image-20200416112837237](all_images/image-20200416112837237.png)
 
 
 

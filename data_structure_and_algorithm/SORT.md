@@ -12,7 +12,7 @@
 
 
 
-![image-20200406181921547](../all_images/image-20200406181921547.png)
+![image-20200406181921547](all_images/image-20200406181921547.png)
 
 
 
@@ -162,7 +162,7 @@ arr elem len:10 loop out:3 in:0 a[in]:11 > a[in + 1]:0 swap!
 
 
 
-![image-20200406184110821](../all_images/image-20200406184110821.png)
+![image-20200406184110821](all_images/image-20200406184110821.png)
 
 ```
 package simplesort;
@@ -402,7 +402,7 @@ arr elem len:10 loop:9 marked:33 insert to 3
 
 执行示例图：
 
-![image-20200408110750051](../all_images/image-20200408110750051.png)
+![image-20200408110750051](all_images/image-20200408110750051.png)
 
 
 
@@ -432,7 +432,7 @@ arr elem len:10 loop:9 marked:33 insert to 3
 
 流程图
 
-![image-20200525201154575](../all_images/image-20200525201154575.png)
+![image-20200525201154575](all_images/image-20200525201154575.png)
 
 
 
@@ -625,7 +625,7 @@ class MergeSortApp {
 
 
 
-![image-20230130124553204](/Users/yanghao/docs/all_images/image-20230130124553204.png)
+![image-20230130124553204](/Users/yanghao/doall_images/image-20230130124553204.png)
 
 ​                                                                           
 
@@ -633,7 +633,7 @@ class MergeSortApp {
 
 
 
-![image-20230130124948706](/Users/yanghao/docs/all_images/image-20230130124948706.png)
+![image-20230130124948706](/Users/yanghao/doall_images/image-20230130124948706.png)
 
 希尔排序的奥义就是通过**创建交错的内部有序的数据项集合**，把完成排序所需要的工作量降到最小。
 
@@ -643,7 +643,7 @@ class MergeSortApp {
 
 根据数据项的大小，定义开始时间隔的大小，然后间隔不断减小直至变成1，一般参用如下Knuth间隔序列。
 
-![image-20230130125748790](/Users/yanghao/docs/all_images/image-20230130125748790.png)
+![image-20230130125748790](/Users/yanghao/doall_images/image-20230130125748790.png)
 
 
 
@@ -706,7 +706,7 @@ class MergeSortApp {
 
 
 
-![image-20230130183813975](/Users/yanghao/docs/all_images/image-20230130183813975.png)
+![image-20230130183813975](/Users/yanghao/doall_images/image-20230130183813975.png)
 
 该方式有效的避免了数据已经有序或者逆序的情况下，选择最大的或者最小的数据作为枢纽的机会，详见下方示例：
 
