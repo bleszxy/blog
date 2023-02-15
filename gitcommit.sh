@@ -34,7 +34,8 @@ case $input in
         done
         echo "替换图片路径为本地相对路径结束";
         exit 1
-    # [nN][oO]|[nN])
+        ;;
+    [nN][oO]|[nN])
         echo "中断提交"
         exit 1
             ;;
