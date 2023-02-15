@@ -31,6 +31,6 @@
    * [MYSQL事务与隔离级别](database/MYSQL_TRANS.md) 
    * [MYSQL复制](database/MYSQL_REPLICATION.md) 
 * 架构师
-   * [分布式协议](architect/DISTRIBUTED_PROTOCOL.md)     
+   * [分布式协议与算法](architect/DISTRIBUTED_PROTOCOL.md)     
 * 面试
    * [JavaInterview](interview/README.md)
