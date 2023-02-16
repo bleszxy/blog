@@ -146,5 +146,12 @@ fi;
 
 
 
+#### 文件内容提换
+
+```
+//替换SERVER_IO_MODEL.md文件内，所有的all_images字符串为all_images
+sed -i 's#all_images#all_images#g' SERVER_IO_MODEL.md
+```
+
   
 
