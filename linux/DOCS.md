@@ -155,3 +155,10 @@ sed -i 's#all_images#all_images#g' SERVER_IO_MODEL.md
 
   
 
+#### 查找大文件
+
+```
+//查询大于200M的文件
+find / -type f -size +200M
+```
+
